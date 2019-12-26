@@ -1,0 +1,7 @@
+{
+    "board": "CubeCell:CubeCell:CubeCell-Board",
+    "configuration": "LORAWAN_REGION=5,LORAWAN_CLASS=0,LORAWAN_NETMODE=0,LORAWAN_ADR=0,LORAWAN_Net_Reserve=0,LORAWAN_AT_SUPPORT=0,LORAWAN_RGB=1",
+    "port": "COM5",
+    "programmer": "AVRISP mkII",
+    "sketch": "LoRaWan_BME280_THP.ino"
+}
