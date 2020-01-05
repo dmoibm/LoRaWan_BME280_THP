@@ -60,7 +60,7 @@ bool LORAWAN_ADR_ON = true;  // true or false
 
 
 /* Indicates if the node is sending confirmed or unconfirmed messages */
-bool IsTxConfirmed = true;  // true or false
+bool IsTxConfirmed = false;  // true or false
 
 /*!
 * Number of trials to transmit the frame, if the LoRaMAC layer did not
