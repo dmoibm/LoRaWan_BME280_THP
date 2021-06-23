@@ -10,7 +10,8 @@ Zudem wurde der Decoder auf Volt geändert (vorher Millivolt) sowie die Ausgabe 
 
 DevEui, AppEui und AppKey werden via AT Befehle gesendet. Siehe https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/lorawan/config_parameter.html#deveui
 
-AT+DevEui=004A89B056F2109B
-AT+AppEui=70B3D57ED001C90C
+AT+DevEui=004A89B076F2109B  
+AT+AppEui=70B3D58ED001C90C  
 AT+AppKey=(siehe TTN https://console.ttn.opennetworkinfrastructure.org/)
-
+## Versuchsaufbau ohne Solarpanel
+![Versuchsaufbau V1: ohne Solarpanel](https://github.com/dmoibm/LoRaWan_BME280_THP/img/AufbauV1.jpeg)
