@@ -14,4 +14,4 @@ AT+DevEui=004A89B076F2109B
 AT+AppEui=70B3D58ED001C90C  
 AT+AppKey=(siehe TTN https://console.ttn.opennetworkinfrastructure.org/)
 ## Versuchsaufbau ohne Solarpanel
-![Versuchsaufbau V1: ohne Solarpanel](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/AufbauV1.jpeg?raw=true)
+![Versuchsaufbau V1: ohne Solarpanel](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/AufbauV1.jpeg?raw=true)
