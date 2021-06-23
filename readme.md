@@ -21,4 +21,4 @@ Antenne: super Antenne! (keine Ahnung welches Fabrikat)
 ![Versuchsaufbau V1: ohne Solarpanel](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/AufbauV1.jpeg?raw=true)
 ## Stromverbrauch
 Heltec verspricht 3.5uA im deep sleep mode. Die LED blinkt beim senden.
-![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/Spannungsverlauf.jpeg?raw=true)
+![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/Spannungsverlauf.png?raw=true)
