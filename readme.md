@@ -6,7 +6,7 @@ writen by S Collins  https://www.securethings.uk (c) for the HELTEC CubeCell Pro
 
 Funktioniert recht gut! Geändert wurde eigentlich nur **IsTxConfirmed = false** um den "The Things Network’s (TTN) Fair Access Policy" nachzukommen. 
 
-Zudem wurde der Decoder auf Volt geändert (vorher Millivolt) sowie die Ausgabe der Werte als Number und nicht als String formatiert.
+Zudem wurde der Decoder auf Volt geändert (vorher Millivolt) sowie die Ausgabe der Werte als Number und nicht als String formatiert. So können die Daten besser ausgewertet werden.
 
 DevEui, AppEui und AppKey werden via AT Befehle gesendet. Siehe https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/lorawan/config_parameter.html#deveui
 
@@ -30,5 +30,6 @@ Heltec verspricht 3.5uA im deep sleep mode. Das Device sendet alle 10min. Temper
 - ca. 71'280 mal senden
 - Spannung bei Start: 4.1V
 - Spannung am Ende: 3.12V  
+- Hat jemand eine Ahnung wie ich nun die Leistungsaufnahme berechnen könnte?
 
 ![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/Spannungsverlauf.png?raw=true)
