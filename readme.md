@@ -6,7 +6,7 @@ writen by S Collins  https://www.securethings.uk (c) for the HELTEC CubeCell Pro
 
 Funktioniert recht gut! Geändert wurde eigentlich nur **IsTxConfirmed = false** um den "The Things Network’s (TTN) Fair Access Policy" nachzukommen. 
 
-Zudem wurde der Decoder auf Volt geändert (vorher Millivolt) sowie die Ausgabe der Werte als Number und nicht als String formatiert.
+Zudem wurde der Decoder auf Volt geändert (vorher Millivolt) sowie die Ausgabe der Werte als Number und nicht als String formatiert. So können die Daten besser ausgewertet werden.
 
 DevEui, AppEui und AppKey werden via AT Befehle gesendet. Siehe https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/lorawan/config_parameter.html#deveui
 
@@ -30,5 +30,10 @@ Heltec verspricht 3.5uA im deep sleep mode. Das Device sendet alle 10min. Temper
 - ca. 71'280 mal senden
 - Spannung bei Start: 4.1V
 - Spannung am Ende: 3.12V  
+- Hat jemand eine Ahnung wie ich nun die Leistungsaufnahme berechnen könnte?
 
-![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/Spannungsverlauf.png?raw=true)
+![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/Spannungsverlauf.png?raw=true)    
+### Auswertungssystem
+````CubeCell -> RAK7258 -> TTN -> FHEM -> InfluxDB -> Grafana````    
+Diese Grafik wurde in Grafana erzeugt. Die Daten holt sich Grafana über InfluxDB, In InfluxDB werden sie von FHEM gespeichert. FHEM holt sie über den MQTT2_CLIENT direkt vom TTN Netzwerk. Ins TTN Netzwerk gelangen die Daten meistens über meinen LoRaWAN Gateway RAK7258 WisGate Edge Lite. Meistens, da ab und an ein anderes Gateway in der Nähe des Sensors die Übertragung erledigt.    
+InfluxDB und Grafana sind auf einem und FHEM auf einem anderen Raspberry PI installiert. Das Netzwerkkabel des FHEM Raspi hat einen Wackel. Und so passiert es, dass nach dem Putzen dieser nicht ordnungsgemäss läuft. Darum hat das Diagramm einige Lücken;-)
