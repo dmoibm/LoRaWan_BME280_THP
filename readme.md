@@ -34,6 +34,6 @@ Heltec verspricht 3.5uA im deep sleep mode. Das Device sendet alle 10min. Temper
 
 ![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/Spannungsverlauf.png?raw=true)    
 ### Auswertungssystem
-> CubeCell -> RAK7258 -> TTN -> FHEM -> InfluxDB -> Grafana 
+> CubeCell -> RAK7258 -> TTN -> FHEM -> InfluxDB -> Grafana    
 Diese Grafik wurde in Grafana erzeugt. Die Daten holt sich Grafana über InfluxDB, In InfluxDB werden sie von FHEM gespeichert. FHEM holt sie über den MQTT2_CLIENT direkt vom TTN Netzwerk. Ins TTN Netzwerk gelangen die Daten meistens über meinen LoRaWAN Gateway RAK7258 WisGate Edge Lite. Meistens, da ab und an ein anderer Gatway in der Nähe des Sensors die Übertragung macht.    
 InfluxDB und Grafana sind auf einem und FHEM auf einem anderen Rasperry PI installiert. Das Netzwerkkabel des FHEM Raspi hat einen Wackel. Und so passiert es dass nach dem Putzen dieser nicht ordnungsgemäss läuft. Darum hat das Diagramm einige Lücken;-)
