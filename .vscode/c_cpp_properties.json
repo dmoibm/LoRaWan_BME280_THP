@@ -8,7 +8,7 @@
             "intelliSenseMode": "msvc-x64",
             "includePath": [
                 "C:\\Users\\dmo\\AppData\\Local\\Arduino15\\packages\\CubeCell\\tools\\**",
-                "C:\\Users\\dmo\\AppData\\Local\\Arduino15\\packages\\CubeCell\\hardware\\CubeCell\\0.0.4\\**",
+                "C:\\Users\\dmo\\AppData\\Local\\Arduino15\\packages\\CubeCell\\hardware\\CubeCell\\1.3.0\\**",
                 "${workspaceFolder}/**"
             ],
             "forcedInclude": [],
