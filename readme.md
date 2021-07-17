@@ -45,12 +45,18 @@ InfluxDB und Grafana sind auf einem und FHEM auf einem anderen Raspberry PI inst
 ## FHEM
 Der grösste Aufwand war es die Daten ins FHEM zu kriegen. Darum hier meine FHEM Definitionen für Gate und Device:    
 ```
-defmod TTNGate MQTT2_CLIENT eu1.cloud.thethings.network:8883
+define TTNGate MQTT2_CLIENT eu1.cloud.thethings.network:8883
 attr TTNGate SSL 1
-attr TTNGate autocreate complex
 attr TTNGate rawEvents .*
 attr TTNGate room TTN
 attr TTNGate username 0074711@ttn
+
+define TTNDevice_008 MQTT2_DEVICE TTNGate
+attr TTNDevice_008 IODev TTNGate
+attr TTNDevice_008 jsonMap correlation_ids_1:0 correlation_ids_2:0 correlation_ids_3:0 correlation_ids_4:0 correlation_ids_5:0 correlation_ids_6:0 correlation_ids_7:0 end_device_ids_application_ids_application_id:0 end_device_ids_dev_addr:0 end_device_ids_dev_eui:0 end_device_ids_device_id:DeviceID end_device_ids_join_eui:0 received_at:ReceivedAt uplink_message_consumed_airtime:Airtime uplink_message_decoded_payload_battery:Battery uplink_message_decoded_payload_humidity:Humidity uplink_message_decoded_payload_pressure:Pressure uplink_message_decoded_payload_temperature:Temperature uplink_message_f_cnt:Count uplink_message_f_port:Port uplink_message_frm_payload:0 uplink_message_locations_user_altitude:Altitude uplink_message_locations_user_latitude:Latitude uplink_message_locations_user_longitude:Longitude uplink_message_locations_user_source:0 uplink_message_received_at:0 uplink_message_rx_metadata_1_channel_index:0 uplink_message_rx_metadata_1_channel_rssi:rssi uplink_message_rx_metadata_1_gateway_ids_eui:0 uplink_message_rx_metadata_1_gateway_ids_gateway_id:GatewayID uplink_message_rx_metadata_1_rssi:0 uplink_message_rx_metadata_1_snr:0 uplink_message_rx_metadata_1_timestamp:0 uplink_message_rx_metadata_1_uplink_token:0 uplink_message_session_key_id:0 uplink_message_settings_coding_rate:0 uplink_message_settings_data_rate_index:0 uplink_message_settings_data_rate_lora_bandwidth:0 uplink_message_settings_data_rate_lora_spreading_factor:0 uplink_message_settings_frequency:0 uplink_message_settings_timestamp:0
+attr TTNDevice_008 readingList TTNGate:v3/0074711\x40ttn/devices/008/up:.* { json2nameValue($EVENT, '', $JSONMAP) }
+attr TTNDevice_008 room TTN
+attr TTNDevice_008 stateFormat Temperature°C Humidity% Pressure p Battery V
 ```   
 
 
