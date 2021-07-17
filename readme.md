@@ -12,7 +12,7 @@ DevEui, AppEui und AppKey werden via AT Befehle gesendet. Siehe https://heltec-a
 
 AT+DevEui=004A89B076F2109B  
 AT+AppEui=70B3D58ED001C90C  
-AT+AppKey=(siehe TTN https://console.ttn.opennetworkinfrastructure.org/)
+AT+AppKey=(siehe TTN https://console.ttn.opennetworkinfrastructure.org/ oder neu https://eu1.cloud.thethings.network/console)
 ## Versuchsaufbau ohne Solarpanel
 - Board: CubeCell – Dev-Board - HTCC-AB01  
 - Sensor: BME/BMP 280  
@@ -38,7 +38,19 @@ Leider misst das Board nicht die effektive Spannung des Akkus. Irgendwie scheint
 Da nun die Akkuspannung unter 3.1V gesunken ist habe ich ein Solarpanel ca. 5x6cm angeschlossen und das Panel ans Fenster geklebt. Und nun nach ca. 20 Tagen zeigt sich wie gut dies funktioniert:    
 ![Spannungsverlauf über 16 Monate](https://github.com/dmoibm/LoRaWan_BME280_THP/blob/master/img/NachSolarpanel.png?raw=true)    
 
-### Auswertungssystem
-````CubeCell -> RAK7258 -> TTN -> FHEM -> InfluxDB -> Grafana````    
+## Auswertungssystem
+```CubeCell -> RAK7258 -> TTN -> FHEM -> InfluxDB -> Grafana```    
 Diese Grafik wurde in Grafana erzeugt. Die Daten holt sich Grafana über InfluxDB, In InfluxDB werden sie von FHEM gespeichert. FHEM holt sie über den MQTT2_CLIENT direkt vom TTN Netzwerk. Ins TTN Netzwerk gelangen die Daten meistens über meinen LoRaWAN Gateway RAK7258 WisGate Edge Lite. Meistens, da ab und an ein anderes Gateway in der Nähe des Sensors die Übertragung erledigt.    
 InfluxDB und Grafana sind auf einem und FHEM auf einem anderen Raspberry PI installiert. Das Netzwerkkabel des FHEM Raspi hat einen Wackel. Und so passiert es, dass nach dem Putzen dieser nicht ordnungsgemäss läuft. Darum hat das Diagramm einige Lücken;-)
+## FHEM
+Der grösste Aufwand war es die Daten ins FHEM zu kriegen. Darum hier meine FHEM Definitionen für Gate und Device:    
+```
+defmod TTNGate MQTT2_CLIENT eu1.cloud.thethings.network:8883
+attr TTNGate SSL 1
+attr TTNGate autocreate complex
+attr TTNGate rawEvents .*
+attr TTNGate room TTN
+attr TTNGate username 0074711@ttn
+```   
+
+
