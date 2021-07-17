@@ -59,4 +59,4 @@ attr TTNDevice_008 room TTN
 attr TTNDevice_008 stateFormat Temperature°C Humidity% Pressure p Battery V
 ```   
 
-
+Achtung! Passwort auf TTNGate setzen!
